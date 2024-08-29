@@ -1,59 +1,57 @@
+import { useEffect, useState } from "react"
 import { Card } from "./card"
+import axiosInstance from "../utils/axios-instance"
+import { LuLoader } from "react-icons/lu"
+import { useSearchParams } from "react-router-dom"
 
-const cards = [
-  {
-    id: "fj;algjow40gjaoif",
-    title: "Branches",
-    description:
-      "Abstract Branches lets you manage, version, and document your designs in one place.",
-    link: "",
-  },
-  {
-    id: "fj;algjow4sgsf0gjaoif",
-    title: "Manage your account",
-    description:
-      "Configure your account settings, such as your email, profile details, and password.",
-    link: "",
-  },
-  {
-    id: "fj;algjow423sgsf0gjaoif",
-    title: "Manage organizations, teams, and projects",
-    description:
-      "Use Abstract organizations, teams, and projects to organize your people and your work.",
-    link: "",
-  },
-  {
-    id: "fj;algjo2453sf0gjaoif",
-    title: "Manage billing",
-    description: "Change subscriptions and payment details.",
-    link: "",
-  },
-  {
-    id: "fj5d4453sf0gjaoif",
-    title: "Authenticate to Abstract",
-    description:
-      "Set up and configure SSO, SCIM, and Just-in-Time provisioning.",
-    link: "",
-  },
-  {
-    id: "42dg453sf0gjaoif",
-    title: "Abstract support",
-    description: "Get in touch with a human.",
-    link: "",
-  },
-]
+interface ICard {
+  id: string
+  title: string
+  description: string
+  link: string
+  createdAt: Date
+  updatedAt: Date
+}
 
 export const CardsSection = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [cards, setCards] = useState<ICard[]>([])
+  const [params] = useSearchParams()
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        setIsLoading(true)
+        const res = await axiosInstance(`/cards?${params.toString()}`)
+        if (res.status === 200) {
+          setCards(res.data)
+        }
+      } catch (error) {
+        console.log(error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    getData()
+  }, [params])
+
   return (
     <section className="bg-white">
       <div className="container py-20">
         <div className="max-w-[900px] mx-auto grid grid-cols-2 gap-16">
-          {cards.map(card => (
-            <Card
-              key={card.id}
-              data={card}
-            />
-          ))}
+          {isLoading ? (
+            <div className="col-span-2 py-20 flex items-center justify-center">
+              <LuLoader className="size-6 animate-spin" />
+            </div>
+          ) : (
+            cards.map(card => (
+              <Card
+                key={card.id}
+                data={card}
+              />
+            ))
+          )}
         </div>
       </div>
     </section>
