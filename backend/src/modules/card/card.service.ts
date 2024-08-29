@@ -53,9 +53,16 @@ const getAllCard = async (query: Record<string, any>) => {
           },
         ],
       },
+      orderBy: {
+        createdAt: "asc",
+      },
     })
   } else {
-    cards = await prisma.card.findMany()
+    cards = await prisma.card.findMany({
+      orderBy: {
+        createdAt: "asc",
+      },
+    })
   }
 
   return cards

@@ -1,4 +1,4 @@
-# Abstract - Help Center
+# Abstract - Help Center - Backend
 
 The Abstract Help Center is a foundational full-stack project designed to provide a simple yet effective support request management system. It allows users to create and retrieve support request cards via a RESTful API.
 
@@ -15,7 +15,7 @@ The Abstract Help Center is a foundational full-stack project designed to provid
 - **Request Card Management:** Create, retrieve, and manage support request cards through well-defined API endpoints.
 - **Card Search:** Easily search and filter support cards based on titles or specific keywords.
 
-**Live Link:** https://trip-squad-server.vercel.app/
+**Test server:** https://abstract-backend-one.vercel.app/ping
 
 ## Getting Started
 
@@ -152,7 +152,7 @@ Server will start on `http://localhost:4600` as `PORT` on .env file
       "id": "d0903397-8ab0-4c53-a08e-f1b46668f60d",
       "title": "Manage organizations, teams, and projects",
       "description": "Use Abstract organizations, teams, and projects to organize your people and your work.",
-      "link": "https://www.abstract.com/manage-your-account",
+      "link": "https://www.abstract.com/manage-organizations",
       "createdAt": "2024-08-29T03:16:13.401Z",
       "updatedAt": "2024-08-29T03:16:13.401Z"
     },
