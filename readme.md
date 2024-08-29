@@ -9,8 +9,8 @@ The Abstract Help Center is a full-stack project that provides a simple support 
 
 ## Live Demo
 
-- Backend Test Server: <a href="https://abstract-backend-one.vercel.app/ping" target="_blank">Abstract Backend</a>
-- Frontend Test Live View: <a href="https://abstract-frontend-beta.vercel.app/" target="_blank">Abstract Frontend</a>
+- Backend Test Server: [Abstract Backend](https://abstract-backend-one.vercel.app/ping)
+- Frontend Test Live View: [Abstract Frontend](https://abstract-frontend-beta.vercel.app/)
 
 ## Getting Started
 
