@@ -32,8 +32,31 @@ const getCard = async (title: string) => {
   return card
 }
 
-const getAllCard = async () => {
-  const cards = await prisma.card.findMany()
+const getAllCard = async (query: Record<string, any>) => {
+  let cards
+
+  if (query.search) {
+    cards = await prisma.card.findMany({
+      where: {
+        OR: [
+          {
+            title: {
+              contains: query.search,
+              mode: "insensitive",
+            },
+          },
+          {
+            description: {
+              contains: query.search,
+              mode: "insensitive",
+            },
+          },
+        ],
+      },
+    })
+  } else {
+    cards = await prisma.card.findMany()
+  }
 
   return cards
 }

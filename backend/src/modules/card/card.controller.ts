@@ -23,7 +23,7 @@ const getCard = catchAsync(async (req, res) => {
 })
 
 const getAllCard = catchAsync(async (req, res) => {
-  const result = await cardService.getAllCard()
+  const result = await cardService.getAllCard(req.query)
 
   sendResponse(res, {
     message: "All card data retrive successfully!",
