@@ -2,6 +2,14 @@
 
 The Abstract Help Center is a full-stack project that provides a simple support request management system. This application allows users to create, retrieve, and manage support request cards through a RESTful API.
 
+## Assignment Question
+
+1. How can you implement shared functionality across a component tree?
+   Ans: Use the Context API for global state, Higher-Order Components for adding functionality, custom hooks for reusable logic, render props for flexible sharing, or lift state up to a common ancestor.
+
+2. Why is the useState hook appropriate for handling state in a complex component?
+   Ans: The useState hook manages local state, keeps logic contained, offers a simple API for updates, and ensures automatic re-rendering when state changes.
+
 ## Technology Stack
 
 - **Frontend:** Vite, React.js, React Router Dom, React Hook Form, Zod, Tailwind CSS, Axios
