@@ -7,6 +7,11 @@ The Abstract Help Center is a full-stack project that provides a simple support 
 - **Frontend:** Vite, React.js, React Router Dom, React Hook Form, Zod, Tailwind CSS, Axios
 - **Backend:** TypeScript, Express.js, PostgreSQL with Prisma ORM, Zod, dotenv, CORS, http-status
 
+## Live Demo
+
+- Backend Test Server: [Abstract Backend](https://abstract-backend-one.vercel.app/ping)
+- Frontend Test Live View: [Abstract Frontend](https://abstract-frontend-beta.vercel.app/)
+
 ## Getting Started
 
 ### 1. Clone the Repository
